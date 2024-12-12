@@ -949,77 +949,151 @@ h5 {
   max-width: 1500px;
 }
 
-/**********************SINGLE VILLA PAGE STYLING ***************************************/
+/********************** SINGLE VILLA PAGE STYLING ***************************************/
 #singleVilla {
   width: 100%;
   padding: 150px 20px;
   background: linear-gradient(176deg, #6868688c, transparent);
+  overflow-x: hidden; /* Evita desbordamientos horizontales */
 }
+
 #singleVilla .container {
-  max-width: 1500px;
-  min-width: 1500px;
-  margin: 0 auto;
+  max-width: 1200px; /* Ancho máximo ajustado para escritorio */
+  margin: 0 auto; /* Centra el contenido */
 }
+
 #singleVilla .container h3 {
   text-align: start;
   color: #ffffff;
 }
+
 #singleVilla .container h4 {
   text-align: start;
   color: #111;
   margin: 30px 0;
 }
+
 #singleVilla .images {
   display: flex;
-  gap: 15px;
-  height: 500px;
+  gap: 20px;
   margin-top: 20px;
+  max-width: 100%; /* Evita que las imágenes excedan el contenedor */
 }
+
 #singleVilla .checkin_out {
   display: flex;
   gap: 20px;
   margin: 30px 0;
 }
+
 #singleVilla .checkin_out span {
   font-weight: 300;
 }
+
 #singleVilla .images .villaImg,
 #singleVilla .images .otherImgs {
   flex: 1;
-  height: 100%;
   display: flex;
   overflow: hidden;
   gap: 15px;
 }
-#singleVilla .images .villaImg img {
+
+#singleVilla .images .villaImg img,
+#singleVilla .images .otherImgs div img {
   width: 100%;
-  height: 100%;
+  height: auto; /* Mantiene las proporciones */
+  object-fit: cover; /* Evita deformaciones */
 }
+
 #singleVilla .images .otherImgs {
   flex-direction: column;
 }
+
 #singleVilla .images .otherImgs div {
   display: flex;
   gap: 15px;
   flex: 1;
 }
-#singleVilla .images .otherImgs div img {
-  flex: 1;
+
+#singleVilla .location iframe {
+  max-width: 100%; /* Limita el ancho */
+  height: 400px; /* Ajusta la altura */
+  border: 0;
 }
-@media (max-width: 1520px) {
-  #singleVilla .container {
-    min-width: 100%;
-  }
-}
+
+/* Media Queries para pantallas medianas */
 @media (max-width: 960px) {
-  #singleVilla .images {
-    flex-direction: column;
-    height: 800px;
-  }
   #singleVilla {
     padding: 150px 20px 35px 20px;
   }
+
+  #singleVilla .container {
+    max-width: 100%;
+  }
+
+  #singleVilla .images {
+    flex-direction: column;
+    height: auto;
+    gap: 10px;
+  }
+
+  #singleVilla .container h3,
+  #singleVilla .container h4 {
+    text-align: center;
+  }
+
+  #singleVilla .checkin_out {
+    flex-direction: column;
+    gap: 10px;
+    text-align: center;
+  }
 }
+
+/* Media Queries para pantallas pequeñas */
+@media (max-width: 768px) {
+  #singleVilla {
+    padding: 100px 15px 20px 15px;
+  }
+
+  #singleVilla .container h3, 
+  #singleVilla .container h4 {
+    text-align: center;
+    font-size: 1.2rem;
+  }
+
+  #singleVilla .images .villaImg img,
+  #singleVilla .images .otherImgs div img {
+    width: 100%;
+    height: auto;
+  }
+
+  #singleVilla .checkin_out {
+    gap: 10px;
+  }
+
+  #singleVilla .location iframe {
+    height: 250px;
+  }
+}
+
+/* Media Queries para pantallas extra pequeñas */
+@media (max-width: 480px) {
+  #singleVilla .container h3,
+  #singleVilla .container h4 {
+    font-size: 1rem;
+    padding: 0 10px;
+  }
+
+  #singleVilla .checkin_out h5 {
+    font-size: 0.9rem;
+  }
+
+  #singleVilla .images {
+    gap: 5px;
+  }
+}
+
+
 
 /****************************************ABOUT PAGE STYLING****************************************************/
 #aboutPage {
